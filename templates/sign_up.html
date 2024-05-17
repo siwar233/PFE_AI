@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/sign_up.css">
+</head>
+<body>
+
+    <img class="logo" src="../static/images/logo.png" alt="Logo">
+
+    <form method="POST"  id="sign_up_form">
+        <h1>Sign UP</h1>
+
+    <div class="First_Name">
+        <label for="First_Name">First_Name:</label>
+        <input type="text" id="First_Name" name="First_name" required>
+    </div>
+
+    <div class="Last_Name">
+        <label for="Last_Name">Last_Name:</label>
+        <input type="text" id="Last_Name" name="Last_name" required>
+    </div>
+
+    
+    <div class="Username">
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" required>
+    </div>
+
+    <div class="Age">
+        <label  for="Age">Age:</label>
+        <input type="date" id="Age" name="Age" required>
+    </div>
+
+    <div class="Phone">
+        <label for="Phone">Phone:</label>
+      <input type="tel" name="Phone" >
+    </div>
+
+    <div class="Email">
+        <label for="Email">Email:</label>
+      <input type="email" name="Email">
+    </div>
+
+    
+
+    <div class="Password">
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" name="Password" required>
+        <button type="button" onclick="togglePasswordVisibility()">Show/Hide</button>
+    </div>
+    <div class="Sign">
+        <button type="submit">Sign UP</button>
+    </div>
+    <div class="size">
+        <a>If you already have an account click <a href="../templates/sign_in.html">Sign IN</a></a>
+    </div>
+    </form>
+    <script src="../static/js/sign_up.js"></script>
+</body>
+</html>
