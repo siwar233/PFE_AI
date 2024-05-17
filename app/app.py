@@ -4,6 +4,7 @@ from sign_up import db, User
 from werkzeug.security import check_password_hash
 from sqlalchemy.exc import IntegrityError
 
+
 app = Flask(__name__, template_folder='templates')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pfe/2024@127.0.0.1/PFE'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
