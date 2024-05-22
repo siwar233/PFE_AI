@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/sign_up.css">
+</head>
+<body>
+
+
+    <form method="POST"  id="sign_up_form">
+        <h1>Sign UP</h1>
+        <div class="form-container">
+            <div class="lef-side">
+
+        <div class="First_Name">
+          <label for="First_Name"></label>
+          <input type="text" id="First_Name" name="First_name" required placeholder="First_name">
+        </div>
+
+    <div class="Last_Name">
+        <label for="Last_Name"></label>
+        <input type="text" id="Last_Name" name="Last_name" required placeholder="Last_Name">
+    </div>
+
+    
+    <div class="Username">
+        <label for="Username"></label>
+        <input type="text" id="Username" name="Username" required placeholder="Username">
+    </div>
+
+    
+</div>
+<div class="right-side">
+
+    <div class="Phone">
+        <label for="Phone"></label>
+      <input type="tel" name="Phone" placeholder="Phone">
+    </div>
+
+    <div class="Email">
+        <label for="Email"></label>
+      <input type="email" name="Email" placeholder="Email" required>
+    </div>
+
+    
+
+    <div class="Password">
+        <label for="Password"></label>
+        <input type="password" id="Password" name="Password" required  placeholder="Password">
+    </div>
+</div>
+</div>
+<div class="Sign">
+    <button type="submit">Sign UP</button>
+</div>
+<div class="size">
+    <p>Already a member? <a href="../templates/sign_in.html">Sign IN</a></p>
+</div>
+    </form>
+    <script src="../static/js/sign_up.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resumes</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/JobApp.css">
+</head>
+<body>
+    <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
+                <ul>
+                  <li class="active"><a href="#">Welcome</a></li>
+                  <li><a href="JobApp.html">Apply Job</a></li>
+                  <li><a href="UploadResume.html">Upload Resume</a></li>
+                  <li><a href="Dashboard.html">Dashboard</a></li>
+                  <li><a href="Personal_Info.html">Personal info</a></li>
+                  <li><a href="sign_in.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="postName">Post Name:</label>
+                    <input type="text" id="postName" name="postName">
+                </div>
+                <div class="form-group">
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" id="job-title" name="job_title" required>
+                </div>
+                <div class="form-group full">
+                    <label for="job-description">Job Description:</label>
+                    <textarea id="job-description" name="job_description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="requirements">Requirements:</label>
+                    <textarea id="requirements" name="requirements" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <div class="form-group">
+                    <label for="salary-range">Salary Range:</label>
+                    <input type="text" id="salary-range" name="salary_range">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

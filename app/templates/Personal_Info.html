@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal_Info</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/Personal_Info.css">
+</head>
+<body>
+    <div>
+        <aside class="sidebar">
+            <nav class="nav">
+                <ul>
+                    <li class="active"><a href="#">Welcome</a></li>
+                    <li><a href="JobApp.html">Apply Job</a></li>
+                    <li><a href="UploadResume.html">Upload Resume</a></li>
+                    <li><a href="Dashboard.html">Dashboard</a></li>
+                    <li><a href="Personal_Info.html">Personal info</a></li>
+                    <li><a href="sign_in.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div> 
+    <div class="PersonalInfo">
+    <form>
+    <h1>Personal Information</h1>
+    <div>
+        <p><strong>Username:</strong> <span id="username" class="editable" contenteditable="true">{{ user.username }}</span></p>
+        <p><strong>Email:</strong> <span id="email" class="editable" contenteditable="true">{{ user.email }}</span></p>
+        <p><strong>Role:</strong> <span id="role" class="editable" contenteditable="true">{{ user.role }}</span></p>
+        <p><strong>Created At:</strong> {{ user.created_at }}</p>
+        <p><strong>Updated At:</strong> {{ user.updated_at }}</p>
+    </div>
+    </form>
+   </div>
+   <script src="../static/js/personal_Info.js"></script>
+</body>
+</html>

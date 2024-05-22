@@ -1,12 +1,20 @@
 from models import User, db
 from sqlalchemy.exc import IntegrityError
+from models import User
 
-class UserService:
+ 
+ 
+def get_user_info(user_id):
+    #user personal info
+    user = User.get_user_by_id(user_id)
+    return user
 
-    @staticmethod
-    def create_user(username, email, password):
-        try:
-            User.add_user(username, email, password)
-            return {"message": "User created successfully"}, 201
-        except ValueError as e:
-            return {"error": str(e)}, 400
+if User:
+        # Display user information on the page
+        print(f"Username: {User.username}")
+        print(f"Email: {User.email}")
+        print(f"Role: {User.role}")
+        print(f"Created at: {User.created_at}")
+        print(f"Updated at: {User.updated_at}")
+else:
+        print("User not found.")
