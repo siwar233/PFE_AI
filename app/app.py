@@ -1,20 +1,21 @@
 from flask import Flask
+from config import Config
 from models import db
-from routes.route_user import user_bp
-from routes.uploadresumes import upload_bp
-from config import config
-import os
+from routes import init_routes
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
+    
+    db.init_app(app)
+    
+    with app.app_context():
+        db.create_all()
+    
+    init_routes(app)
+    
+    return app
 
-# Load configuration from config.py
-config_name = os.getenv('FLASK_CONFIG') or 'default'
-app.config.from_object(config[config_name])
-
-db.init_app(app)
-
-app.register_blueprint(user_bp, url_prefix='/user')
-app.register_blueprint(upload_bp, url_prefix='/resume')
-
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app = create_app()
+    app.run(debug=True)
