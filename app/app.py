@@ -1,20 +1,19 @@
 from flask import Flask
-from models import db
-from routes.route_user import user_bp
-from routes.uploadresumes import upload_bp
-from config import config
-import os
+from config import Config
+from app.models.user import db
+from .routes import register_bp, login_bp
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
 
-# Load configuration from config.py
-config_name = os.getenv('FLASK_CONFIG') or 'default'
-app.config.from_object(config[config_name])
+    db.init_app(app)
 
-db.init_app(app)
+    with app.app_context():
+        from .models import User  
 
-app.register_blueprint(user_bp, url_prefix='/user')
-app.register_blueprint(upload_bp, url_prefix='/resume')
+    # Register blueprints
+    app.register_blueprint(register_bp)
+    app.register_blueprint(login_bp)
 
-if __name__ == '__main__':
-    app.run()
+    return app

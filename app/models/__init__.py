@@ -19,6 +19,15 @@ from .hr import HR
 from .job import Job
 from .job_app import JobApplication
 
+
+from .user import User
+from . import db
+
+def init_db(app):
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+
 # This part contains all the models that will impact the database
 # Import all the models here to ensure they are registered with SQLAlchemy
 

@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx'}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@upload_bp.route('/upload_resume', methods=['POST'])
+@upload_bp.route('/UploadResume', methods=['POST'])
 def upload_resume():
     # Ensure user is logged in and is an HR
     if 'user_id' not in session or session.get('role') != 'HR':
