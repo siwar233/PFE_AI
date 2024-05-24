@@ -41,8 +41,11 @@ def signup():
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "User could not be created!", "error": str(e)}), 500
+    
 
-@user_bp.route('/signin', methods=['POST'])
+#!!!!!!!
+
+@user_bp.route('/home', methods=['POST'])
 def signin():
     data = request.get_json()
     
@@ -62,7 +65,7 @@ def signin():
     else:
         return jsonify({"message": "Invalid username or password!"}), 401
 
-@user_bp.route('/signout', methods=['POST'])
+@user_bp.route('/home_page', methods=['POST'])
 def signout():
     session.clear()
     return jsonify({"message": "Logout successful!"}), 200
