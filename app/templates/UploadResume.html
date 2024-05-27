@@ -12,6 +12,7 @@
             <ul>
                 <li class="active"><a href="#">Welcome</a></li>
                 <li><a href="JobApp.html">Apply Job</a></li>
+                <li><a href="Job_list.html">Jobs List</a></li>
                 <li><a href="UploadResume.html">Upload Resume</a></li>
                 <li><a href="Dashboard.html">Dashboard</a></li>
                 <li><a href="Personal_Info.html">Personal info</a></li>
@@ -21,19 +22,15 @@
     </aside>
     <div class="container">
         <form method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="candidate-email" name="candidate_email" required>
+            <div class="select_job">
+                <label for="job_name">Select Job Name:</label>
+                <select id="job_name" name="job_name" required>
+                    {% for job_name in job_names %}
+                        <option value="{{ job_name }}">{{ job_name }}</option>
+                    {% endfor %}
+                </select>
             </div>
-            <div class="form-group">
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first_name" required>
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last_name" required>
-            </div>
-            <div class="form-group full">
+            <div class="upload_resume">
                 <label for="resume">Upload Resume:</label>
                 <input type="file" id="resume" name="resume" accept=".pdf" required multiple>
             </div>

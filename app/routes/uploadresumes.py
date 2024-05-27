@@ -54,3 +54,12 @@ def upload_resume():
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "Resume could not be uploaded!", "error": str(e)}), 500
+    
+    
+@app.route('/upload_resume')
+def render_upload_resume():
+    # Fetch all distinct job titles from the JobPosting model
+    job_names = JobPosting.query.with_entities(JobPosting.title).distinct().all()
+    # Extract job names from the query result
+    job_names = [job[0] for job in job_names]
+    return render_template("upload_resume.html", job_names=job_names)

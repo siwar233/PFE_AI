@@ -10,24 +10,7 @@ import psycopg2
 import re
 import os
 
-UPLOAD_FOLDER = 'uploads'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
 # Function to create PostgreSQL connection and cursor
-def create_connection():
-    conn = psycopg2.connect(
-        host="your_host",
-        database="your_database",
-        user="your_username",
-        password="your_password"
-    )
-    cursor = conn.cursor()
-    return conn, cursor
-
-# Function to insert experience record
-def insert_experience(cursor, title, start_date, end_date, company):
-    cursor.execute('''INSERT INTO "Experience" (Title, StartDate, EndDate, Company) VALUES (%s, %s, %s, %s)''',
-                   (title, start_date, end_date, company))
 
 # Method to extract text from PDF
 def extract_text_from_pdf_file(filepath):
@@ -56,17 +39,4 @@ def deskew(image):
 
     return rotated
 
-# Method to extract experience details from text
-def extract_experience_details(text):
-    title_match = re.search(r'Title:\s*(.*)', text)
-    start_date_match = re.search(r'Start Date:\s*(.*)', text)
-    end_date_match = re.search(r'End Date:\s*(.*)', text)
-    company_match = re.search(r'Company:\s*(.*)', text)
-    
-    if title_match and start_date_match and end_date_match and company_match:
-        title = title_match.group(1)
-        start_date = start_date_match.group(1)
-        end_date = end_date_match.group(1)
-        company = company_match.group(1)
-        return title, start_date, end_date, company
-    return None, None, None, None
+

@@ -13,7 +13,7 @@ def create_app():
         from .models import User  
 
     # Register blueprints
-    app.register_blueprint(register_bp)
-    app.register_blueprint(login_bp)
+    app.register_blueprint(signup_bp)
+    app.register_blueprint(home_bp)
 
     return app

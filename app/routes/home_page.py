@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from app.models.user import User
-from app.services.user_service import UserService
+from app.services.user_service import sign_in_user
 
 login_bp = Blueprint('home', __name__)
 
@@ -21,7 +21,7 @@ def login():
             email = request.form.get("Email")  
             password = request.form.get("Password")
 
-            user = UserService.authenticate_user(email, password)
+            user = sign_in_user.authenticate_user(email, password)
             if user:
                 session['user_id'] = user.user_id
                 flash(f"Welcome, {user.username}!", "success")
