@@ -1,4 +1,4 @@
-from app import db
+''' from app import db
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 
@@ -59,3 +59,4 @@ class HR(db.Model):
             raise ValueError("HR not found")
         db.session.delete(hr)
         db.session.commit()
+'''

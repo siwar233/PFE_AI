@@ -2,8 +2,8 @@ import os
 from flask import Blueprint, request, jsonify, current_app, session
 from werkzeug.utils import secure_filename
 from datetime import datetime
-from app import db
-from models import Resume
+from Project import db
+from Project.models import Resume
 
 upload_bp = Blueprint('upload_bp', __name__)
 

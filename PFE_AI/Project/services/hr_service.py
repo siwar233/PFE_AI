@@ -1,3 +1,4 @@
+'''
 from app import db
 from models import HR
 from sqlalchemy.exc import IntegrityError
@@ -27,5 +28,5 @@ def update_hr(hr_id, **kwargs):
         if hasattr(hr, key):
             setattr(hr, key, value)
     db.session.commit()
-
+'''
 
